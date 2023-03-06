@@ -8,15 +8,15 @@ public class BusControl : MonoBehaviour {
     /// This is an example script for controlling the doors and signs on the bus. 
     /// You may wish to create a more specific implementation consistent with your game.
     /// </summary>
-
     public Animator Door1;
     public Animator Door2;
     public Animator StopSign1;
     public Animator StopSign3;
-    private float speed = 20.0f;
+    public float speed = 20.0f;
     private float turnspeed = 45.0f;
     private float horizontalInput;
     private float forwardInput;
+
 
     public float OpenCloseSpeed;
 
@@ -39,8 +39,23 @@ public class BusControl : MonoBehaviour {
         else if (forwardInput < 0.0f)
             turnspeed = 45.0f;
 
+        
 
 
+
+
+    }
+
+
+    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("Collided with " + collision.gameObject.name);
+
+        }
     }
 
     public void Open(bool open = true) {

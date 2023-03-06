@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Driver
+  - Ground
+  - Wheel 1
+  - Wheel 2
+  - Wheel 3
+  - Wheel 4
   layers:
   - Default
   - TransparentFX
